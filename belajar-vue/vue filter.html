@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <input type="text" v-model="newCat">
+        <button v-on:click="addKitty">Add</button>
+        <br>
+        <ul>
+            <li v-for="cat in cats">{{cat.name | capitalize}}</li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        new Vue({
+	        el:'#root',
+            data:{
+                cats:[
+                    {name:'kitkat'},
+                    {name:'hello'},
+                    {name:'blablabla'}
+                ],
+                newCat:""
+            },
+            methods:{
+                addKitty:function(){
+                    this.cats.push({name:this.newCat})
+                    this.newCat=""
+                }
+            },
+            filters:{
+                capitalize:function(value){
+                    return value.toUpperCase()
+                }
+            }
+        })
+    </script>
+</body>
+</html>

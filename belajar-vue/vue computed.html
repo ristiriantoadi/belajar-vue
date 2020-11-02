@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h1>{{ kittifyName }}</h1>
+        <h2>{{newCat}}</h2>
+        <input type="text" v-model="newCat">
+        <!-- <button v-on:click="addKitty">Add</button> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        new Vue({
+	        el:'#root',
+            data:{
+                newCat:""
+            },
+            computed:{
+                kittifyName:function(){
+                    if(this.newCat.length>1){
+                        return this.newCat+'y'
+                    }
+                }
+            }            
+        })
+    </script>
+</body>
+</html>
