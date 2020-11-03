@@ -1,18 +1,39 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Todos/>
+    <Todos :todos="todos" />
   </div>
 </template>
 
 <script>
+// import HelloWorld from './components/HelloWorld.vue'
 import Todos from './components/Todos.vue'
 
 export default {
   name: 'App',
   components: {
     Todos
+  },
+  data:function(){
+    return{
+      todos:[
+        {
+          id:1,
+          title:"something",
+          completed:false
+        },
+        {
+          id:2,
+          title:"another",
+          completed:false
+        },
+                {
+          id:3,
+          title:"another",
+          completed:false
+        }
+      ]
+    }
   }
 }
 </script>

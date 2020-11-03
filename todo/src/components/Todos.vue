@@ -1,32 +1,38 @@
 <template>
-  <div>
-      <h1>Something</h1>
-  </div>
+    <div>
+        <h1>Hello world</h1>
+        <div>
+            <div v-bind:key="todo.id" v-for="todo in todos">
+                <TodoItem :todo="todo"/>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
+import TodoItem from './TodoItem.vue'
 export default {
-  name: 'HelloWorld',
-  props: {
-    
-  }
+    name: 'Todos',
+    components:{
+        TodoItem
+    },
+    props: {
+        todos: Object
+    },
+    methods:{
+        toggleCompleted(){
+
+        }
+    }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
+margin: 40px 0 0;
 }
 a {
-  color: #42b983;
+color: #42b983;
 }
 </style>
