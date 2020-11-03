@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Todos :todos="todos" />
+    <Todos v-on:del-todo="delTodo" :todos="todos" />
   </div>
 </template>
 
@@ -13,6 +13,11 @@ export default {
   name: 'App',
   components: {
     Todos
+  },
+  methods:{
+    delTodo(id){
+      this.todos = this.todos.filter((x)=>{if (x.id !== id) return x})
+    }
   },
   data:function(){
     return{

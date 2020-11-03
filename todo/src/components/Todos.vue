@@ -3,7 +3,7 @@
         <h1>Hello world</h1>
         <div>
             <div v-bind:key="todo.id" v-for="todo in todos">
-                <TodoItem :todo="todo"/>
+                <TodoItem v-on:del-todo="$emit('del-todo',todo.id)" :todo="todo"/>
             </div>
         </div>
     </div>
