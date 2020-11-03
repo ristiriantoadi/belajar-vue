@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import AnotherPage from "../views/AnotherPage.vue";
+import PageParam from "../views/PageParam.vue";
 
 Vue.use(VueRouter);
 
@@ -9,6 +11,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/another_page",
+    name: "AnotherPage",
+    component: AnotherPage
+  },
+  {
+    path: "/page_param/:id",
+    name: "PageParam",
+    component: PageParam
   },
   {
     path: "/about",
